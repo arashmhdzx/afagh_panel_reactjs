@@ -1,0 +1,183 @@
+.wrapper {
+	max-height: 100%;
+	height: auto;
+	min-height: 100%;
+	:global(.rs-table) {
+		min-height: 100% !important;
+		border-radius: 25px;
+
+		transition: all 0.2s ease;
+
+		div:not(:not(:first-of-type)) {
+			// transition: all 0.2s ease;
+		}
+		:global(.rs-table-row) {
+			// position: relative;
+			width: 100%;
+		}
+		:global(.rs-table-row):not(:first-of-type) {
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				margin-right: 2.5%;
+				width: 95%;
+				height: 1px;
+				background: rgba(#000, 0.03);
+			}
+		}
+	}
+	.id {
+		opacity: 0.6;
+		font-weight: normal;
+	}
+	.name {
+		:global(.rs-table-cell-content) {
+			justify-content: flex-start !important;
+		}
+	}
+	.action {
+		:global(.rs-dropdown-toggle) {
+			width: fit-content;
+			display: flex;
+			padding: 0;
+			border-radius: 20rem;
+		}
+		.action_detector {
+			display: flex;
+			width: min-content;
+			margin: 0 auto;
+			.action_btn {
+				background: #673ab7 !important;
+				color: #fff !important;
+			}
+		}
+		.action_btn {
+			padding: 0.5rem;
+			border: 1px solid rgba(209, 213, 219, 0.3);
+			border-radius: 20rem;
+			background-color: rgba(238, 238, 238, 0.5);
+			&:focus {
+				background-color: #000 !important;
+			}
+			display: flex;
+			width: fit-content;
+			margin: 0 auto;
+			transition: all 0.2s ease;
+			cursor: pointer;
+			box-shadow: 0px 0px 0px rgba(#000, 0.2);
+			&:hover {
+				background-color: rgba(238, 238, 238, 1);
+				box-shadow: 0px 0px 2px rgba(#000, 0.2);
+			}
+		}
+	}
+}
+.Tooltip {
+	div {
+		padding: 0.5rem 2rem !important;
+		color: rgba(#fff, 0.87) !important;
+		cursor: pointer;
+	}
+}
+.drop_mother {
+	box-shadow: 0px 0px 32px rgba(#000, 0.35);
+	// animation: TooltipBounceInEffect 250ms ease 0s 1 normal forwards;
+	backdrop-filter: blur(16px) saturate(25%);
+	-webkit-backdrop-filter: blur(16px) saturate(180%);
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 1.5rem;
+	border: 1px solid inset rgba(209, 213, 219, 0.3);
+	padding: 0;
+	overflow: hidden;
+	* {
+		text-decoration: none !important;
+	}
+	.drop {
+		padding: 0.75rem 1.15rem;
+		text-align: right;
+		transition: all 0.2s ease;
+		cursor: pointer;
+		position: relative;
+		&:before {
+			content: "";
+			width: 100%;
+			height: 100%;
+			background: rgba(#000, 0.17);
+			backdrop-filter: blur(16px) saturate(120%);
+			-webkit-backdrop-filter: blur(16px) saturate(120%);
+			opacity: 0;
+			transition: opacity 0.2s ease;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 100;
+		}
+		.drop_item {
+			position: relative;
+			z-index: 100000;
+			display: flex;
+			// justify-content: center;
+			align-items: center;
+			.drop_item_icon {
+				display: flex;
+				margin-left: 0.5rem;
+				transition: opacity 0.2s ease;
+				opacity: 0.6;
+			}
+		}
+		* {
+			color: rgba(#fff, 0.87) !important;
+		}
+		&:hover {
+			$color: var(--accent);
+			&:before {
+				opacity: 0.6;
+			}
+			background: $color;
+			.drop_item_icon {
+				opacity: 1;
+			}
+		}
+		&:not(:last-of-type) {
+			border-bottom: 1px solid rgba(#000, 0.05);
+		}
+	}
+}
+.dicon {
+	width: min-content;
+	// height: max-content;
+	aspect-ratio: 1/1;
+	border-radius: 30rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	box-shadow: 0px 0px 12px rgba(#000, 0.01);
+	border: 1px solid rgba(#000, 0.05);
+	:global(.rs-btn) {
+		display: flex;
+		padding: 1rem 12px;
+	}
+	svg {
+		margin: 0;
+	}
+}
+.logo_container {
+	height: 75px;
+	.logo {
+		width: 75px;
+		margin: 0 auto;
+		aspect-ratio: 1/1;
+		border-radius: 20rem;
+	}
+}
+@keyframes TooltipBounceInEffect {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

@@ -1,0 +1,128 @@
+@import url("font/fontiran.css");
+@import "~rsuite/dist/rsuite-rtl.min.css";
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	// font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+	// 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	height: 100vh;
+	overflow: hidden;
+}
+.rs-calendar {
+	font-family: IRANSans;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+	transition: background-color 600000s 0s, color 600000s 0s;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: IRANSans;
+}
+.tooltip,
+.rs-tooltip {
+	border-top-right-radius: 2rem !important;
+	border-top-left-radius: 1rem !important;
+	border-bottom-left-radius: 1rem !important;
+	border-bottom-right-radius: 2rem !important;
+	background: linear-gradient(
+		90deg,
+		rgba(#000, 0.9),
+		rgba(#000, 0.7)
+	) !important;
+	backdrop-filter: blur(20px) saturate(83%);
+	-webkit-backdrop-filter: blur(20px) saturate(83%);
+}
+.notif {
+	border-radius: 2rem;
+}
+.rs-drawer-content {
+	// overflow: auto;
+
+	// padding: 2.5vh 5%;
+	// padding-top: 10vh;
+}
+.rs-loader-backdrop {
+	border-radius: 2.75rem;
+}
+.rs-dropdown-item {
+	display: grid !important;
+	grid-auto-flow: column;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 0.5rem;
+	z-index: 100000;
+}
+.rs-table-cell {
+	height: auto !important;
+	.rs-table-cell-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+.multi {
+	.rs-picker-toggle-caret {
+		cursor: pointer;
+	}
+}
+.rs-btn-primary {
+	max-height: 100% !important;
+}
+.rs-picker-menu {
+	border-radius: 15px !important;
+}
+.rs-popover {
+	padding: 0rem !important;
+	border-radius: 15px !important;
+	overflow: hidden;
+	max-height: min-content;
+	z-index: 100000 !important;
+	.rs-popover-content {
+		padding-top: 10px;
+	}
+	.divider {
+		margin: 5px !important;
+		opacity: 0.5;
+	}
+}
+.rs-modal-wrapper {
+	.rs-modal-content {
+		border-radius: 1.75rem !important;
+	}
+}
+
+.rs-drawer-wrapper {
+	position: fixed !important;
+	width: 32.5vw !important;
+	right: unset !important;
+	left: 0;
+	.rs-drawer {
+		width: 100% !important;
+		position: relative;
+	}
+	.rs-drawer-body {
+		padding: 2rem 0.75rem;
+	}
+}
+.rs-table-row-header {
+	.rs-table-cell {
+		right: 0;
+		left: unset !important;
+	}
+}
+.rs-table-row:not(.rs-table-row-header) {
+	&:hover {
+		background-color: rgba(#000, 0.01) !important;
+		.rs-table-cell {
+			background-color: rgba(#000, 0.01) !important;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.tabular_wrapper {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: auto 1fr;
+	.tabs_container {
+		width: 100%;
+		.radio_group {
+			width: 100%;
+			justify-content: center;
+			border: none;
+		}
+	}
+	.tabular_content_container {
+	}
+}

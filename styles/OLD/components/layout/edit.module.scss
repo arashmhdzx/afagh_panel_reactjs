@@ -1,0 +1,48 @@
+.wrapper {
+	padding-bottom: 10vh;
+	.back {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		.back_btn {
+			border-top-left-radius: 2.75rem;
+			border-bottom-right-radius: 2.75rem;
+			padding: 1.25rem 2rem;
+			div {
+				font-weight: 900;
+				font-size: 16px;
+			}
+		}
+	}
+}
+.rows {
+	width: 100%;
+
+	.row {
+		width: 100%;
+		margin-bottom: 2rem;
+		display: flex;
+		flex-wrap: wrap;
+		.col {
+			flex: var(--flex);
+		}
+	}
+
+	.submit {
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		z-index: 1000;
+
+		.submit_btn {
+			border-bottom-left-radius: 2.75rem;
+			border-top-right-radius: 2.75rem;
+			padding: 2rem;
+			div {
+				font-weight: 900;
+				font-size: 18px;
+			}
+		}
+	}
+}

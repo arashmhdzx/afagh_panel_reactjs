@@ -1,0 +1,8 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/super-admin/courses/edit": "pages/super-admin/courses/edit.js",
+  "/super-admin/classrooms": "pages/super-admin/classrooms.js",
+  "/super-admin/classrooms/create": "pages/super-admin/classrooms/create.js"
+}

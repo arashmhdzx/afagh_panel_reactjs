@@ -1,0 +1,30 @@
+.wrapper {
+	padding-bottom: 5rem;
+	.panel_container {
+		border-radius: 25px;
+		.ctas {
+			padding-top: 1rem;
+		}
+	}
+	.nothing {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 5rem 1rem;
+		border: 1px solid rgba(#000, 0.1);
+		border-radius: 25px;
+		height: 100%;
+	}
+	.container {
+		height: 30vh;
+		max-height: 100vh;
+		overflow: hidden;
+	}
+	.panel {
+		transition: all 0.2s ease;
+		&.chosen {
+			background: rgba(#2196f3, 0.37);
+		}
+	}
+}

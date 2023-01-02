@@ -1,0 +1,121 @@
+.wrapper {
+	height: 100%;
+	:global(.rs-picker-tag) {
+		padding: 0.25rem;
+		:global(.rs-picker-toggle-clean),
+		:global(.rs-picker-toggle-caret) {
+			top: 0.5rem !important;
+		}
+	}
+	.select_container {
+		// border-radius: 15px;
+		// overflow: hidden;
+		// transition: all 0.2s ease;
+		// border: 0px solid rgba(#000, 0) !important;
+		// width: 100%;
+		// height: 100%;
+		// .cont {
+		// 	padding: 12rem;
+		// 	background: #000;
+		// }
+		// .single_container {
+		// 	height: 100%;
+		// 	position: relative;
+		// 	.single {
+		// 		height: 100%;
+		// 		position: absolute;
+		// 		width: 100%;
+		// 		z-index: 1054;
+		// 		border: 1px solid rgba(#000, .0);
+		// 		border-radius: 15px;
+		// 		transition: all 0.2s ease;
+		// 		&:hover {
+		// 			border-color: rgba(#2096f3, 1);
+		// 		}
+		// 	}
+		// }
+
+		.select,
+		.multi {
+			width: 100%;
+			border-radius: 15px;
+			outline: none !important;
+			box-shadow: none;
+			border: none;
+			background: rgba(#000, 0.125);
+			:global(.rs-picker-toggle-active) {
+				// border: none;
+				border-radius: 15px;
+				border: 1px solid rgba(#000, 0);
+				outline: none;
+				box-shadow: none;
+			}
+			* {
+				font-family: IRANSans;
+				outline: none !important;
+				box-shadow: none !important;
+			}
+			:global(.rs-picker-toggle) {
+				background-color: transparent !important;
+				transition: all 0.2s ease;
+				border-radius: 15px;
+				padding-top: 0.75rem;
+				padding-bottom: 0.75rem;
+				margin: 0;
+				box-shadow: none;
+				outline: none;
+				span,
+				svg {
+					top: 0.75rem;
+				}
+				&:hover {
+					border-color: rgba(#1976d2, 0.75) !important;
+					background: rgba(#000, 0.2);
+				}
+				:global(.rs-picker-toggle-textbox) {
+					// background-color: rgba(#000, 0.125);
+				}
+			}
+		}
+	}
+	.multi {
+		transition: all 0.2s ease;
+		&.spacer {
+			:global(.rs-picker-toggle) {
+				padding-right: 1rem !important;
+			}
+		}
+		:global(.rs-picker-toggle) {
+			background-color: transparent !important;
+
+			transition: all 0.2s ease;
+			border-radius: 15px;
+			padding-top: calc(0.75rem / 2) !important;
+			padding-bottom: unset !important;
+			margin: 0;
+			box-shadow: none;
+			outline: none;
+			span,
+			svg {
+				top: 0.75rem;
+			}
+			&:hover {
+				border-color: rgba(#1976d2, 0.75) !important;
+				background: rgba(#000, 0.2);
+			}
+		}
+		:global(.rs-tag-icon-close) {
+			display: none;
+			width: 0;
+		}
+		:global(.rs-tag-closable) {
+			padding-left: 0.5rem;
+		}
+	}
+}
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5rem 2rem;
+}

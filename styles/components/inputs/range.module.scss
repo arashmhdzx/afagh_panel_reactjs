@@ -1,0 +1,25 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	grid-template-rows: 1fr;
+	column-gap: 0.75rem;
+	align-items: center;
+	justify-content: center;
+	.label {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.slider_wrapper {
+		// -webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+		transform: rotate(180deg);
+		direction: rtl;
+		grid-column: 2;
+		grid-row: 1;
+	}
+	.val {
+		display: flex;
+		grid-row: 1;
+		grid-column: 3;
+	}
+}

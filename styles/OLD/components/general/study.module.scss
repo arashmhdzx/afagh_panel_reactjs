@@ -1,0 +1,18 @@
+.wrapper {
+	grid-column: 1;
+	.episode_viewer {
+		.video {
+			video {
+				border-radius: 1rem;
+			}
+		}
+		padding-bottom: 2.5rem;
+	}
+}
+.accord {
+	margin-top: 5vh;
+	width: 100%;
+	:global(.search) {
+		width: 100%;
+	}
+}

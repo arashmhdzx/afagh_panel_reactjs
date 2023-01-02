@@ -1,0 +1,10 @@
+.compound {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	grid-auto-flow: column;
+	column-gap: 0.75rem;
+	* {
+		text-align: center;
+	}
+}

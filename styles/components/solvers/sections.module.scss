@@ -1,0 +1,15 @@
+.add {
+	border: 2px dashed rgba(#000, 0.6);
+	display: flex;
+	border-radius: 1rem;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.35;
+	margin-bottom: 1rem;
+	transition: all 0.2s ease;
+	cursor: pointer;
+	&:hover {
+		opacity: 1;
+		// border-color: #2196F3;
+	}
+}

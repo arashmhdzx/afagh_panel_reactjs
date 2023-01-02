@@ -1,0 +1,112 @@
+.wrapper {
+	height: 100vh;
+	width: 100%;
+	max-height: inherit;
+	overflow: hidden;
+	background: rgba(#000, 0.95);
+	.upper {
+		grid-row: 1;
+		display: grid;
+		grid-template-columns: 1fr 25% auto;
+		column-gap: 1rem;
+		width: 100%;
+		.btn {
+			grid-column: 3;
+		}
+		.paginate_container {
+			grid-column: 2;
+			align-self: flex-end;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			min-width: 50%;
+			padding-bottom: 0.75rem;
+			.paginate {
+				margin-right: 1rem;
+			}
+		}
+		.search {
+			align-self: flex-end;
+			// justify-self: center;
+			margin-right: 2.75rem;
+			// margin-top: 1rem;
+			// width: 35%;
+			grid-column: 1;
+		}
+	}
+	.container {
+		display: grid;
+		grid-template-columns: 20% 1fr;
+		grid-template-rows: 1fr;
+		// overflow: hidden;
+		height: inherit;
+		width: 100%;
+
+		padding-bottom: 1rem;
+		.sidebar {
+			grid-column: 1;
+			grid-row: 1;
+		}
+		.content_container {
+			grid-column: 2;
+			grid-row: 1;
+			background: #eee;
+			padding: 2.75rem;
+			height: inherit;
+			max-height: inherit;
+			overflow: hidden;
+			border-top-right-radius: 5rem;
+			border-bottom-right-radius: 5rem;
+			box-shadow: 0px 0px 24px rgba(#fff, 0.35);
+			display: grid;
+			grid-template-rows: auto 1fr;
+			grid-template-columns: 1fr var(--overlay);
+			.content {
+				height: 100%;
+				max-height: inherit;
+				overflow: hidden;
+				display: flex;
+				grid-row: 2;
+				width: 100%;
+			}
+		}
+	}
+	.trigger {
+		position: absolute;
+		top: 1.5 * 2rem;
+		left: 2.75 * 2rem;
+		border-radius: 3rem;
+		padding: 1.15rem 1.5rem;
+	}
+}
+@media only screen and (max-width: 1024px) {
+	.wrapper {
+		.container {
+			display: block;
+			.side {
+				display: flex;
+				position: fixed;
+				left: 3rem;
+				top: 2rem;
+			}
+			.study {
+				display: flex;
+				position: fixed;
+				left: 3rem;
+				top: 6rem;
+			}
+			.sidebar {
+				display: none;
+				&.side_open {
+					display: block;
+					width: 100vw;
+					min-height: 100vh;
+				}
+			}
+			.content_container {
+				border-radius: 0;
+			}
+		}
+	}
+}

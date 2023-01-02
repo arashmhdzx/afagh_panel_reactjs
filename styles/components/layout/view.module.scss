@@ -1,0 +1,73 @@
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.prompt {
+	width: 100%;
+	border: 1px solid rgba(#000, 0.04);
+	padding: 1rem 1.5rem;
+	border-radius: 15px;
+	background: rgba(#000, 0.05);
+}
+.wrapper {
+	width: 100%;
+	grid-row: 1;
+	max-height: inherit;
+	min-height: 100%;
+	height: auto;
+	overflow: auto;
+	margin-bottom: 1rem;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-timing-function: ease;
+	opacity: 0;
+
+	&.no_min_height {
+		height: unset !important;
+	}
+	.paginate {
+		top: 0.35rem;
+		margin: auto;
+		position: absolute;
+		left: 5rem;
+		border: 1px solid rgba(#fff, 0.15);
+		background: rgba(#673ab7, 1);
+		padding: 0.25rem 0.5rem;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		color: rgba(#fff, 0.87);
+		border-radius: 0.85rem;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&.disabled {
+			cursor: not-allowed;
+			opacity: 0.6;
+			background: rgba(#000, 0.2);
+		}
+		&:hover {
+			background: rgba(#000, 0.87);
+			color: rgba(#fff, 0.87);
+		}
+		.paginate_prompt {
+		}
+	}
+}

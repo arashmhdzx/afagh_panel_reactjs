@@ -1,0 +1,21 @@
+.container {
+	display: grid;
+	padding: 1.5rem 2rem;
+	grid-auto-flow: column;
+	column-gap: 0.5rem;
+	background: rgb(25, 118, 210);
+	width: fit-content;
+	color: rgba(#fff, 0.87);
+	font-weight: bold;
+	font-size: 1rem;
+	align-items: center;
+	justify-content: center;
+	border-bottom-right-radius: 2.75rem;
+	transition: all 0.2s ease;
+	.icon {
+		display: flex;
+	}
+	&:hover {
+		background: rgb(48, 63, 159);
+	}
+}

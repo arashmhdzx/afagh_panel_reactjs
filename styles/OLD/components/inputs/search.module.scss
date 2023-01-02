@@ -1,0 +1,63 @@
+.wrapper {
+	.bar {
+		.input_group {
+			transition: all 0.2s ease;
+			border: 1px solid rgba(#000, 0);
+			background: rgba(#000, 0.125);
+			border-radius: 15px;
+			outline: none !important;
+			overflow: hidden;
+			&:global(.rs-input-group-focus) {
+				outline: none !important;
+				border-color: rgba(#000, 0.15) !important;
+				background: rgba(#000, 0.02) !important;
+			}
+			.input {
+				flex: 1;
+			}
+			input {
+				background-color: transparent;
+				transition: all 0.2s ease;
+				outline: none;
+				font-family: IRANSans;
+				padding-top: 0.75rem;
+				padding-bottom: 0.75rem;
+				&.numeral {
+					text-align: left;
+					direction: ltr;
+				}
+				// &:global(#search) {
+				//   & ~ span {
+				//     height: 100%;
+				//     svg {
+				//       margin-bottom: 2px;
+				//     }
+				//   }
+				// }
+				&:hover {
+					outline: none;
+				}
+				&:focus {
+					outline: none !important;
+					border: none;
+				}
+			}
+			.addons {
+				background: transparent;
+				display: grid;
+				grid-auto-flow: column;
+				.addon_container {
+					background: transparent;
+				}
+				.search_addon {
+					padding: 0 !important;
+				}
+			}
+
+			&:hover {
+				border-color: rgba(#000, 0.15) !important;
+				background: rgba(#000, 0.2);
+			}
+		}
+	}
+}

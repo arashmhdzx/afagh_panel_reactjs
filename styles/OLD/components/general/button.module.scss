@@ -1,0 +1,45 @@
+.wrapper {
+	width: 100%;
+	backdrop-filter: blur(0px) saturate(180%);
+	-webkit-backdrop-filter: blur(0px) saturate(180%);
+	background-color: var(--color, rgba(253, 253, 253, 0.17));
+	border-radius: 15px;
+	padding: 1rem 2rem;
+	border: 1px solid rgba(255, 255, 255, 0.125);
+	cursor: pointer;
+	transition: background-color 0.15s ease-in-out;
+	.content {
+		display: flex;
+		width: fit-content;
+		margin: 0 auto;
+		color: rgba(#fff, 0.87);
+		font-weight: bold;
+	}
+	&:hover {
+		background-color: var(--hover, rgba(#000, 0.37));
+	}
+	&.loading {
+		background-color: rgba(255, 235, 59, 0.37);
+		animation: LoaderBackgroundChange 1.5s ease-out 0s infinite normal forwards;
+		margin-top: 2px;
+	}
+	&.failed {
+		background-color: rgba(244, 67, 54, 0.37);
+	}
+	&.success {
+		background-color: rgba(76, 175, 80, 0.37);
+	}
+}
+@keyframes LoaderBackgroundChange {
+	0% {
+		background-color: rgba(255, 235, 59, 0.37);
+	}
+
+	50% {
+		background-color: rgba(255, 235, 59, 0.87);
+	}
+
+	100% {
+		background-color: rgba(255, 235, 59, 0.37);
+	}
+}

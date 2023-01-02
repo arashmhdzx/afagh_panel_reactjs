@@ -1,0 +1,91 @@
+.wrapper {
+	transition: all 0.2s ease;
+	border: 1px solid rgba(#fff, 0.01) !important;
+	background: rgba(#000, 0.125);
+	border-radius: 15px;
+	outline: none !important;
+	overflow: hidden;
+	&:global(.rs-input-group) {
+		border: 1px solid rgba(#fff, 0.01) !important;
+	}
+	&:global(.rs-input-group-focus) {
+		outline: none !important;
+		border-color: rgba(#00b0ff, 0.87) !important;
+		background: rgba(#fff, 0.87) !important;
+		color: rgba(#000, 0.87);
+		.addon {
+			svg {
+				transition: color 0.2s ease;
+				color: rgba(#000, 0.6) !important;
+			}
+			.counter {
+				color: rgba(#000, 0.37) !important;
+			}
+			.secondary {
+				color: rgba(#000, 0.6) !important;
+			}
+		}
+	}
+	.addon_container {
+		padding: 0 !important;
+		background: transparent;
+		opacity: 0.6;
+		.addon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			div {
+				display: flex;
+				padding: 0.5rem;
+			}
+			.counter {
+				color: rgba(#fff, 0.37);
+
+				&.contains {
+					background-color: #fff;
+					border-radius: 10px;
+					color: rgba(#000, 0.6);
+				}
+				&.exceeds {
+					background-color: rgb(211, 47, 47);
+					border-radius: 10px;
+					color: rgba(#fff, 0.6) !important;
+				}
+			}
+			.secondary {
+				color: rgba(#fff, 0.6);
+			}
+			.visibility {
+				cursor: pointer;
+				height: 100%;
+				width: 100%;
+				transition: all 0.2s ease;
+			}
+		}
+	}
+	.input {
+		background-color: transparent !important;
+		border: 1px solid rgba(#fff, 0.01) !important;
+		transition: all 0.2s ease;
+		outline: none;
+		font-family: IRANSans;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		&:hover {
+			outline: none;
+		}
+		&:focus {
+			outline: none !important;
+			border: none;
+			background-color: transparent !important;
+		}
+	}
+}
+.clear {
+	display: flex;
+	cursor: pointer;
+	transition: color 0.2s ease;
+	&:hover {
+		color: red;
+	}
+}

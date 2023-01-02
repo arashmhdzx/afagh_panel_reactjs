@@ -1,0 +1,40 @@
+.over {
+	.overlay {
+		min-height: 100%;
+
+		overflow: hidden;
+		background: #fff;
+		border-right: 1px solid rgba(#000, 0.1);
+		display: grid;
+		grid-template-rows: auto 1fr;
+		.header {
+			padding: 1rem 2rem;
+		}
+		.content {
+			padding: 1rem;
+			height: 100%;
+			// overflow: auto;
+		}
+	}
+}
+.wrapper {
+	.media {
+		.additional {
+			display: flex;
+			margin-top: 1.5rem;
+			div {
+				&:not(:first-of-type) {
+					margin-right: 0.5rem;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 1024px) {
+	.study {
+	}
+	.over {
+		width: 100% !important;
+		display: var(--open);
+	}
+}

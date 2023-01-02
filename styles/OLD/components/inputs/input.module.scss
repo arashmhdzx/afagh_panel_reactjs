@@ -1,0 +1,61 @@
+.wrapper {
+	height: 100%;
+	.input_group {
+		height: 100%;
+		transition: all 0.2s ease;
+		border: 1px solid rgba(#000, 0);
+		background: rgba(#000, 0.125);
+		border-radius: 15px;
+		outline: none !important;
+		overflow: hidden;
+		&:global(.rs-input-group-focus) {
+			outline: none !important;
+			border-color: rgba(#000, 0.15) !important;
+			background: rgba(#000, 0.02) !important;
+		}
+		.addon_end {
+			background: transparent;
+			opacity: 0.6;
+		}
+		.input {
+			background-color: transparent;
+			transition: all 0.2s ease;
+			outline: none;
+			font-family: IRANSans;
+			padding-top: 0.75rem;
+			padding-bottom: 0.75rem;
+			&:hover {
+				outline: none;
+			}
+			&:focus {
+				outline: none !important;
+				border: none;
+			}
+		}
+		.time {
+			width: 100%;
+			height: 100%;
+			:global(.rs-btn) {
+				height: 100%;
+				display: flex;
+				padding-left: 11px;
+				align-items: center;
+				border-radius: 15px;
+				background-color: rgba(#000, 0) !important;
+				:global(.rs-picker-toggle-placeholder),
+				:global(.rs-picker-toggle-value) {
+					flex: 1;
+				}
+				:global(.rs-picker-toggle-clean) {
+					top: unset;
+				}
+				:global(.rs-icon) {
+					position: relative;
+					left: 0;
+					top: unset;
+					bottom: unset;
+				}
+			}
+		}
+	}
+}

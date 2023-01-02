@@ -1,0 +1,38 @@
+.wrapper {
+	&.inline {
+		display: grid;
+		grid-auto-flow: column;
+		grid-template-columns: 1fr auto;
+		column-gap: 0.5rem;
+		margin-bottom: 1rem;
+		.row {
+			margin-bottom: 0 !important;
+			height: 100% !important;
+			div {
+				height: 100%;
+			}
+		}
+	}
+	.row {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		height: fit-content;
+		grid-column: 1;
+		&:not(&:last-of-type) {
+			margin-bottom: 1rem;
+		}
+		.col {
+			flex: var(--flex, 1);
+			display: flex;
+			// height: max-content;
+			width: 100%;
+			div {
+				width: 100%;
+			}
+			&:not(&:first-of-type) {
+				margin-right: 0.5rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,52 @@
+.wrapper {
+	height: 100%;
+	.table {
+		border-radius: 25px;
+		.video_init {
+			transition: all 0.2s ease;
+			&.video_init_content {
+				text-decoration: underline;
+				cursor: pointer;
+				&:hover {
+					background-color: #512da8;
+				}
+			}
+		}
+		.image {
+			width: 85px;
+			aspect-ratio: 1/1;
+			border-radius: 200vh;
+			overflow: hidden;
+		}
+		.dropdown_container {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			max-height: 100%;
+
+			.dp_btn {
+				border-radius: 100vh !important;
+				aspect-ratio: 1/1;
+			}
+		}
+		.btn {
+			.btn_container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.btn_icon {
+					padding-left: 0.5rem;
+					opacity: 0.87;
+				}
+				.btn_content {
+					opacity: 0.87;
+					font-weight: 900;
+				}
+			}
+		}
+		:global(.rs-table-cell-first) {
+			left: unset !important;
+			right: 0 !important;
+		}
+	}
+}

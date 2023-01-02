@@ -1,0 +1,49 @@
+.wrapper {
+	width: 100%;
+	backdrop-filter: blur(0px) saturate(180%);
+	-webkit-backdrop-filter: blur(0px) saturate(180%);
+	background-color: var(--color, rgba(#3f51b5, 0.87));
+	border-radius: 15px;
+	padding: 1rem 2rem;
+	border: 1px solid rgba(255, 255, 255, 0.125);
+	cursor: pointer;
+	transition: all 0.25s ease-in-out;
+	span {
+		font-size: 14px;
+		height: 18px !important;
+	}
+	.content {
+		display: flex;
+		width: fit-content;
+		margin: 0 auto;
+		color: rgba(#fff, 0.87);
+		font-weight: bold;
+	}
+	&:hover {
+		background-color: var(--hover, rgba(#3f51b5, 0.6));
+	}
+	&.loading {
+		background-color: rgba(255, 235, 59, 0.87);
+		animation: LoaderBackgroundChange 1.5s ease-out 0s infinite normal forwards;
+		opacity: 1;
+	}
+	&.failed {
+		background-color: rgba(244, 67, 54, 0.87);
+	}
+	&.success {
+		background-color: rgba(76, 175, 80, 0.87);
+	}
+}
+@keyframes LoaderBackgroundChange {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 1.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
