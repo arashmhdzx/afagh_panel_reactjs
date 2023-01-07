@@ -86,7 +86,10 @@ export default function CourseViewUser({ solve, controller }) {
 									{
 										title: "عملیات ها",
 										type: "actions",
-										actions: [{ key: "show" }],
+										actions: [
+                                            { key: "show" },
+                                            { key: "enter" },
+                                        ],
 									},
 								],
 							},

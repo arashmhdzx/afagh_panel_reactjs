@@ -14,13 +14,12 @@ const Form = ({ config, structure, formik }) => {
 	const [additional, setAdditional] = React.useState({});
 	const solve = Solve({});
 	const [status, setStatus] = React.useState("init");
-	const value_handler = (props) =>
+	const value_handler = (props) =>{
 		setAdditional(
 			props?.multi
 				? { ...additional, ...props?.multi }
 				: { ...additional, [props.key]: props.val }
-		);
-	console.log(additional);
+		);}
 	let out;
 	const {
 		url,
@@ -36,7 +35,6 @@ const Form = ({ config, structure, formik }) => {
 		before,
 		editorDefaultVals,
 	} = config ?? {};
-
 	const dummy = (name) =>
 		name === "time"
 			? {
@@ -64,7 +62,7 @@ const Form = ({ config, structure, formik }) => {
 										key={`row-${index}-${i}`}
 									>
 										{input && (
-											<AInput {...input} {...formik} {...dummy(input?.name)} />
+											<AInput {...input} {...formik} {...dummy(input?.name)} isCash={additional.type} />
 										)}
 										{upload && (
 											<AfaghUploader
@@ -74,7 +72,7 @@ const Form = ({ config, structure, formik }) => {
 											/>
 										)}
 										{select && (
-											<Selector {...select} handler={(e) => value_handler(e)} />
+											<Selector {...select} {...formik} handler={(e) => value_handler(e)} />
 										)}
 										{range && (
 											<Range {...range} handler={(e) => value_handler(e)} />
@@ -104,7 +102,7 @@ const Form = ({ config, structure, formik }) => {
 			value_handler({ multi: out });
 		}
 	}, [editorDefaultVals, value_handler]);
-	console.log(additional);
+	// console.log(additional);
 	return (
 		<Formik
 			initialValues={{
@@ -113,8 +111,8 @@ const Form = ({ config, structure, formik }) => {
 			{...valid}
 			onSubmit={(v) => {
 				const Does = () => {
-					const temp_v = { ...v, ...additional };
-					console.log(temp_v);
+					const temp_v = { ...v, ...additional};
+					// console.log(temp_v);
 					let formData =
 						content_type === "multipart/form-data" ? new FormData() : {}; // Whatever happens, this is the data sent by the Request
 					Object.entries(temp_v).map((v, i) => {
@@ -128,12 +126,12 @@ const Form = ({ config, structure, formik }) => {
 									? solve.Convert.toEn(value + "")
 									: value
 							);
-						} else {
-							formData = {
-								...formData,
+                        } else {
+                            formData = {
+                                ...formData,
 								[name]: Array.isArray(value)
-									? value
-									: solve.Convert.toEn(value + ""),
+                                ? value
+                                : solve.Convert.toEn(value + ""),
 							};
 						}
 					});
@@ -150,9 +148,12 @@ const Form = ({ config, structure, formik }) => {
 							push_notif,
 						},
 						dependencies: {
+
 							callback: (e) => {
 								setStatus("success");
+                                // console.log("yes");
 								typeof callback === "function" && callback(e);
+                                // console.log("yes");
 								route &&
 									setTimeout(() => {
 										solve.Router.path.set(

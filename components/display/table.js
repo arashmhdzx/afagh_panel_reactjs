@@ -2,6 +2,8 @@ import React from "react";
 import * as T from "../../styles/components/display/table.module.scss";
 import { Table as Tbl } from "rsuite";
 import Solve from "../solvers/solve";
+import { object } from "yup/lib/locale";
+import axios from "axios";
 
 export default function Table({
 	page,
@@ -36,6 +38,7 @@ export default function Table({
 	} = data_info ?? {};
 	const [data, setData] = React.useState(null);
 	const [height, setHeight] = React.useState(null);
+	const [searchQuery, setSearchQuery] = React.useState(null);
 
 	const Cell = ({ content_data: cell, Tb, page, ke: k, type, aid }) => {
 		// cell = key, type, value, styles, transformers
@@ -49,6 +52,7 @@ export default function Table({
 	React.useEffect(() => {
 		if (data === null && !prefetched) {
 			const query = solve.Router.query.get("s"); // gets the query string of search (s)
+            setSearchQuery(solve.Router.query.get("s"))
 			const force = query ? true : false; // if there was a change in search query, force a refetch
 			const page_query = solve.Router.query.get("page");
 			let config = {
@@ -84,6 +88,11 @@ export default function Table({
 	}, [height]);
 
 	const h = height && { height: height };
+
+    function searchFilter(data,q){
+        // console.log(data.title);
+        axios.get("");
+    }
 
 	return (
 		<div className={`${T.wrapper}`}>
@@ -146,6 +155,9 @@ export default function Table({
 									className={`${k === "name" ? T.name : ""}`}
 								>
 									{(rowData, rowIndex) => {
+                                        rowData && searchFilter(rowData,searchQuery);
+                                        // searchQuery ? 
+                                        // :
 										return (
 											<Cell
 												content_data={rowData}

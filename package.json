@@ -20,10 +20,12 @@
     "persian-number": "^1.5.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-player": "^2.11.0",
     "rsuite": "^5.23.0",
     "sass": "^1.56.1",
     "store2": "^2.14.2",
     "uuid": "^9.0.0",
+    "video.js": "^7.20.3",
     "yup": "^0.32.11"
   }
 }

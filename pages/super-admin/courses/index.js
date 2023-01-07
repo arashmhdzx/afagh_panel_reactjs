@@ -22,7 +22,7 @@ export default function CoursesViewIndex({ solve, Page }) {
 			});
 		}
 	}, [page]);
-	console.log(page, state);
+	console.log(state);
 	React.useEffect(() => {
 		page !== router.query?.page &&
 			router.query?.page &&
@@ -38,7 +38,7 @@ export default function CoursesViewIndex({ solve, Page }) {
 			content={{
 				step0: {
 					btn: {
-						prompt: "دوره",
+						prompt: "جلسه",
 						action: "create",
 					},
 					search: true,
@@ -66,6 +66,7 @@ export default function CoursesViewIndex({ solve, Page }) {
 										title: "عملیات ها",
 										type: "actions",
 										actions: [
+                                            { key: "enter" , url:"" },
 											{ key: "edit" },
 											{ key: "delete", url: "courses" },
 										],

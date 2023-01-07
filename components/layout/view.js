@@ -21,7 +21,8 @@ export default function View({
 	const [data, setData] = React.useState(
 		data_info?.data[data_info?.index]?.[data_info?.target] ?? null
 	);
-	React.useEffect(() => {
+        // console.log(structure);
+    React.useEffect(() => {
 		data_info &&
 			(data ??
 				setData({
@@ -81,7 +82,7 @@ export default function View({
 					Solver={Solver}
 				/>
 			)}
-			{accord && <AAccord {...accord} Solver={Solver} />}
+			{accord && <AAccord {...accord} Solver={Solver} />} {/*// shows sar fasl */ }
 			{prompt ?? ""}
 		</div>
 	);
@@ -105,6 +106,6 @@ export default function View({
 			solve={Solver}
 		/>
 	) : (
-		<Structure {...structure} />
+		<Structure {...structure} /> // shows list of courses // shows sar fasl
 	);
 }

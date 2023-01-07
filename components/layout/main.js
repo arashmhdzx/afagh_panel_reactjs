@@ -11,10 +11,11 @@ import Sidebar from "./sidebar";
 
 export default React.memo(function Main(props) {
 	const { content, solve: Solver, header, overlay } = props ?? {};
-	const Cont = useMemo(() => Content({ ...content, Solver }), [content]);
+    const Cont = useMemo(() => Content({ ...content, Solver }), [content]);
 	const [side, setSide] = useState(false);
 	const [study, setStudy] = useState(false);
-	return (
+    // console.log(props.content.step4);
+    return (
 		<div className={`${M.wrapper}`} suppressHydrationWarning>
 			<Head>
 				<title>{header?.metaTitle ?? header?.title ?? ""} | بنیاد آفاق</title>
@@ -68,7 +69,7 @@ export default React.memo(function Main(props) {
 					</div>
 				)}
 				<div className={`${M.sidebar} ${side ? M.side_open : ""}`}>
-					<Sidebar />
+					<Sidebar Solver={Solver} />
 				</div>
 				<div
 					className={`${M.content_container}`}
@@ -80,7 +81,9 @@ export default React.memo(function Main(props) {
 					<Header {...header} Solver={Solver} />
 					<div className={`${M.content}`}>
 						{/* <Cont /> */}
-						{content?.loading ? <Loader /> : Cont}
+                        {}
+						{/* {content?.loading ? <Loader /> :  Cont} { /* edit page */ }
+						{content?.loading ? <Loader /> :  Cont} { /* edit page */ }
 						{overlay ?? ""}
 					</div>
 				</div>
