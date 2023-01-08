@@ -1,12 +1,38 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button, Divider, Drawer } from "rsuite";
 import Main from "../../../components/layout/main";
 import View from "../../../components/layout/view";
 import StudySolve from "../../../components/solvers/study";
 import * as S from "../../../styles/components/solvers/study.module.scss";
-import Videojs from 'video.js'
+// import Rhp from 'react-hls-player';
 
+import videojs from "video.js";
+
+
+const Video = (props) => {
+
+    const videoNode = useRef(null);
+    const [player, setPlayer] = useState(null);
+
+    useEffect(() => {
+        if (videoNode.current) {
+            const _player = videojs(videoNode.current, props);
+            setPlayer(_player);
+            return () => {
+                if (player !== null) {
+                    player.dispose();
+                }
+            };
+        }
+    }, []);
+
+    return (
+        <div data-vjs-player>
+            <video ref={videoNode} className="video-js"></video>
+        </div>
+    );
+};
 
 
 export default function Study({ solve }) {
@@ -16,6 +42,21 @@ export default function Study({ solve }) {
     const { title } = state ?? {};
     const sec = +router.query?.sec;
     const ep = +router.query?.ep;
+
+
+    const play = {
+        fill: true,
+        fluid: true,
+        autoplay: true,
+        controls: true,
+        preload: "metadata",
+        sources: [
+            {
+                src: epObj?.video_url,
+                type: "application/x-mpegURL"
+            }
+        ]
+    };
 
     const onDownloadClick = (file) => {
         // using Java Script method to get PDF file
@@ -32,19 +73,8 @@ export default function Study({ solve }) {
         })
     }
 
-    // const videoJsOptions = {
-    //     autoplay: false,
-    //     playbackRates: [0.5, 1, 1.25, 1.5, 2],
-    //     width: 720,
-    //     height: 300,
-    //     controls: true,
-    //     sources: [
-    //         {
-    //             src: "https://lms.afagh.ir/upload/videos/2023/1/sftp_1673101005_sample-mp4-file-small.mp4",
-    //             type: 'video/mp4',
-    //         },
-    //     ],
-    // };
+
+
     const StudySolverTemp = StudySolve({ sec, ep, data: state });
     React.useEffect(() => {
         if (router.query?.id && !state) {
@@ -128,7 +158,8 @@ export default function Study({ solve }) {
                                                 >
                                                     {/* {console.log(epObj)} */}
                                                     {epObj?.video_url
-                                                        ? <iframe src={epObj.video_url} />
+                                                        ?
+                                                        <Video {...play} />
                                                         : solve.Convert.withBadge({
                                                             val: <strong>ویدیو ندارد</strong>,
                                                             color: "grey",
@@ -138,14 +169,14 @@ export default function Study({ solve }) {
                                                 <div className={`${S.additional}`}>
                                                     {epObj?.mp3_url && (
                                                         <div>
-                                                            <Button onClick={()=> onDownloadClick(epObj?.mp3_url)} appearance='ghost' size='sm'>
+                                                            <Button onClick={() => onDownloadClick(epObj?.mp3_url)} appearance='ghost' size='sm'>
                                                                 دانلود محتوای صوتی
                                                             </Button>
                                                         </div>
                                                     )}
                                                     {epObj?.pdf_url && (
                                                         <div>
-                                                            <Button onClick={()=> onDownloadClick(epObj?.pdf_url)} appearance='ghost' size='sm'>
+                                                            <Button onClick={() => onDownloadClick(epObj?.pdf_url)} appearance='ghost' size='sm'>
                                                                 دانلود PDF
                                                             </Button>
                                                         </div>
