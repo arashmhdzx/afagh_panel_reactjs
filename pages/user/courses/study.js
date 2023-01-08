@@ -44,20 +44,6 @@ export default function Study({ solve }) {
     const ep = +router.query?.ep;
 
 
-    const play = {
-        fill: true,
-        fluid: true,
-        autoplay: true,
-        controls: true,
-        preload: "metadata",
-        sources: [
-            {
-                src: epObj?.video_url,
-                type: "application/x-mpegURL"
-            }
-        ]
-    };
-
     const onDownloadClick = (file) => {
         // using Java Script method to get PDF file
         fetch(file).then(response => {
@@ -117,6 +103,21 @@ export default function Study({ solve }) {
     const epObj = secObj?.episode?.find(
         (v) => v?.id === +solve.Router.query.get("ep")
     );
+
+    const play = {
+        fill: true,
+        fluid: true,
+        autoplay: true,
+        controls: true,
+        preload: "metadata",
+        sources: [
+            {
+                src: epObj?.video_url,
+                type: "application/x-mpegURL"
+            }
+        ]
+    };
+
     return (
         <>
             <Main
